@@ -61,7 +61,10 @@ Deep Learning--CNN: Edge Detection, LinkedIn. https://www.linkedin.com/pulse/dee
 
 A **very informative, intuitive, and interactive explanation** of how CNN models work can be found [here](https://poloclub.github.io/cnn-explainer/).
 
-Basic CNN models, especially deep CNN models with many layers, suffer from something called **vanishing gradients** which hinders the models ability to backpropogate effectively through all of the layers and update the weights at each layer accordingly. Therefore, a more effective CNN architecture called the **"residual neural network"** (RNN) was introduced. ResNet models, compared to traditional CNNs, use residual blocks and skip connections to form identity shortcuts that shift learning from full transformations to residual increments. This allows very deep networks to learn meaningful representations efficiently by preserving useful information and easing optimization, rather than forcing each layer to relearn complete mappings. The following image shows a comparison of the 
+Basic CNN models, especially deep CNN models with many layers, suffer from something called **vanishing gradients** which hinders the models ability to backpropogate effectively through all of the layers and update the weights at each layer accordingly. Therefore, a more effective CNN architecture called the **"residual neural network"** (RNN) was introduced. ResNet models, compared to traditional CNNs, use residual blocks and skip connections to form identity shortcuts that shift learning from full transformations to residual increments. This allows very deep networks to learn meaningful representations efficiently by preserving useful information and easing optimization, rather than forcing each layer to relearn complete mappings. The following image shows a comparison of the the VGC-19 CNN model, a plain 34-layer CNN, and a 34-layer residual neural network with **16 skip connections** shown with the "u"-shaped markings.
+
+![VGC-19, plain CNN, and ResNet34 comparison](resnet_model_comparison.png)
+He, K., Zhang, X., Ren, S., & Sun, J. (2015). Figure 3 [Illustration of dimensionality change in residual blocks]. In Deep residual learning for image recognition (arXiv:1512.03385) arXiv. https://arxiv.org/pdf/1512.03385.pdf
 
 Now let's take a look at each method more closely. 
 
