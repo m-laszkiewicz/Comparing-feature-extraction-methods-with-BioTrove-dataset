@@ -16,7 +16,7 @@ The README file includes the following:
   - Information on the clustering biotrove challenge and the BioTrove data subset used for this challenge
   - A description of the research proejct/experiment which is the subject matter of this repository with visualizations of embeddings
 
-The **code to reproduce** the results of **each of the four feature extraction methods** is seperated amongst files in the main branch:
+The **code to reproduce** the results of **each of the four feature extraction methods** is **seperated into different files** in the main branch:
   - The **Data Preprocessing** file contains code to load in the clustering biotrove image dataset and metadata (49,633 image subset of original BioTrove dataset with corresponding metadata csv file), perform    transforms on images, custom dataset subclass, and dataloader. Since all four feature extraction methods function using the same preprocessing strategy, a seperate file has been used for this code. 
   - Each of the four extraction methods has its own, uniquely named section. Each individual section includes an explanation of the particular extraction method used as well as code to perform that method. The    four extraction method files include:
       - **Single-layer ResNet50 feature extraction**
