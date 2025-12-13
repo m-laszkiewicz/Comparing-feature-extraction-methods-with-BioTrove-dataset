@@ -21,10 +21,10 @@ Code is presented in the form of Jupyter notebooks.
 **CODE TO REPRODUCE RESULTS OF EXPERIMENT EXISTS IN THE FOLLOWING FILES**:
   - The **Data Preprocessing** file contains code to load in the clustering biotrove image dataset and metadata (49,633 image subset of original BioTrove dataset with corresponding metadata csv file), perform transforms on images, create custom dataset subclass, and create a dataloader. The **first three** feature extraction methods use the same preprocessing code and as such, a separate data preprocessing notebook file has been uploaded to the main branch of this repo. [Data preprocessing code here](Data_Preprocessing.ipynb). The last method, double-layer ResNet50 + supervised contrastive learning, has **unique data preprocessing code** and so the jupyter notebook for that method **includes the preprocessing steps**. 
   - Each of the four extraction methods has its own, uniquely named file in which you will find a notebook showing the code to run the extraction method and visualize the embeddings. The four extraction method files include:
-      - **Single-layer ResNet50 feature extraction**
-      - **Double-layer ResNet50 feature extraction**
-      - **Double-layer ResNet101 feature extraction**
-      - **Double-layer ResNet50 + supervised contrastive learning feature extraction**
+      - [**Single-layer ResNet50 feature extraction**](single-layer_ResNet50_feature_extraction.ipynb)
+      - [**Double-layer ResNet50 feature extraction**](double-layer_ResNet50_feature_extraction.ipynb)
+      - [**Double-layer ResNet101 feature extraction**](double-layer_ResNet101_feature_extraction.ipynb)
+      - [**Double-layer ResNet50 + supervised contrastive learning feature extraction**](supervised_contrastive_feature_extraction.ipynb)
 
 My recommendation for **reproducing the experiment** is to open up a blank notebook (jupyter, colab, etc.), and **copy and paste the code** from the "Data Preprocessing" notebook and the desired feature extraction method notebook. However, **for the final feature extraction method**, all of the necessary code is kept in one notebook, named "supervised_contrastive_feature_extraction" and so there is **no need to copy and past the data preprocessing code for this particular extraction method**. Each individual file includes the import statements necessary for that specific code at the top and is designed to be ready to use as is. The **only edit necessary** is the addition of your **unique file paths** to the image directory and the metadata csv. **Instructions for downloading the data** are included in the [Data Preprocessing markdown file](Data_Preprocessing.md).
 
