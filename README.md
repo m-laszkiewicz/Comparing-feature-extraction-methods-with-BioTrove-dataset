@@ -108,7 +108,7 @@ Finally, let's discuss the **visualization of image embeddings**. As stated befo
 ![UMAP parameters](umap_params.png)
 
 ### Visualizations of embeddings by extraction method:
-**All embeddings are colored by family**
+**NOTE: ALL EMBEDDINGS ARE COLORED BY FAMILY**
 
 ### Single-layer ResNet50 feature extraction
 
