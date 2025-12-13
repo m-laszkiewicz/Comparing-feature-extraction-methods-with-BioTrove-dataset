@@ -39,11 +39,11 @@ The "Clustering BioTrove Challenge" was created by the ML+X machine learning org
 ## Research Question: Which feature extraction method performs the best (i.e. creates the most separability for embeddings in embedding space)?
 Feature extraction is a way to extract meaningful information from images in the form of image embeddings. In the world of deep learning, this is commonly done by way of convolutional neural networks (CNNs) but can also be done using other model architectures such as vision transformers (ViTs). For this research project, I compared the results of feature extraction on the "Clustering Biotrove" challenge dataset of ~50k images using different methods that were all based use of **CNN models**. The following image shows an example of feature extraction performed in this experiment using a pretrained (on ImageNet) ResNet50 model to extract features at two different layers of the model (layer 3 and layer 4 respectively to represent hierarchy of genus- and species-level features). This visualiazation was done using a density heatmap to show with parts of the input image were being "noticed" the most or "given the most importance" by the model at each extraction point (layer 3 and layer 4).
 
-![ResNet50 double layer feature extraction on two BioTrove Images](feature_extraction_example.png).
+![ResNet50 double layer feature extraction on two BioTrove Images](feature_extraction_example.png)
 
 This type of visualization makes feature extraction on images more intuitive as we can easily see what areas of the input image the model is "picking up on the most". However, this type of visualization is note practical for a large dataset, say 49,633 images like in the case of the Clustering BioTrove dataset. For that reason, image embeddings can be reduced to two dimensions using the Uniform Manifold Approximation and Projection (UMAP) library in Python. This allows us to visualize the resulting embedding(s) for each input image on a two-dimensional plot so that we can look at the resulting spread of the embeddings. In the context of the "Clustering BioTrove" challenge, and clustering problems in general, increased seperability of image embeddings can often lead to improved clustering. Below is an example of an embedding visualization from one of my models used in the "Clustering BioTrove" challenge.
 
-![Clustering BioTrove embedding visualization]
+![Clustering BioTrove embedding visualization](embedding_visualization_example.png)
 
 
 
