@@ -28,7 +28,7 @@ Code is presented in the form of Jupyter notebooks.
 
 My recommendation for **reproducing the experiment** is to open up a blank notebook (jupyter, colab, etc.), and **copy and paste the code** from the "Data Preprocessing" notebook and the desired feature extraction method notebook. However, **for the final feature extraction method**, all of the necessary code is kept in one notebook, named "supervised_contrastive_feature_extraction" and so there is **no need to copy and past the data preprocessing code for this particular extraction method**. Each individual file includes the import statements necessary for that specific code at the top and is designed to be ready to use as is. The **only edit necessary** is the addition of your **unique file paths** to the image directory and the metadata csv. **Instructions for downloading the data** are included in the [Data Preprocessing markdown file](Data_Preprocessing.md).
 
-Lastly, a **Reflection** file is included in the main branch to communicate my reflections about the experiemnt: what worked, what didn't, and why?
+Lastly, a [**Reflection**](Reflection.md) file is included in the main branch to communicate my reflections about the experiemnt: what worked, what didn't, and why?
 
 ## Background
 ### Original BioTrove Dataset
