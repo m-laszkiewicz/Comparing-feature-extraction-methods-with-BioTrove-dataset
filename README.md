@@ -20,14 +20,13 @@ Code is presented in the form of Jupyter notebooks.
 
 **CODE TO REPRODUCE RESULTS OF EXPERIMENT EXISTS IN THE FOLLOWING FILES**:
   - The **Data Preprocessing** file contains code to load in the clustering biotrove image dataset and metadata (49,633 image subset of original BioTrove dataset with corresponding metadata csv file), perform transforms on images, create custom dataset subclass, and create a dataloader. Since all four feature extraction methods function using the same preprocessing strategy, a separate file has been used for this code. [Data preprocessing code here](Data_Preprocessing.ipynb)
-  - Each of the four extraction methods has its own, uniquely named section. Each individual section includes an explanation of the particular extraction method used as well as code to perform that method. The four extraction method files include:
+  - Each of the four extraction methods has its own, uniquely named file in which you will find a notebook showing the code to run the extraction method and visualize the embeddings. The four extraction method files include:
       - **Single-layer ResNet50 feature extraction**
       - **Double-layer ResNet50 feature extraction**
       - **Double-layer ResNet101 feature extraction**
       - **Double-layer ResNet50 + supervised contrastive learning feature extraction**
-  - The **Embedding Visualization** file contains information on the visualization method used as well as the code to visualize the embeddings extracted using any of the extraction methods listed above. Since only one visualization method was used, and it is compatible with all the extraction methods, the visualization method exists as an individual file.
 
-My recommendation for **reproducing the experiment** is to open up a blank notebook (jupyter, colab, etc.), and **copy and paste the code** from the "Data Preprocessing" file, the desired feature extraction method file, and "Embedding Visualization" file into the notebook. Each individual file includes the import statements necessary for that specific code at the top and is designed to be ready to use as is. The **only edit necessary** is the addition of your **unique file paths** to the image directory and the metadata csv. **Instructions for downloading the data** are included in the Data Preprocessing file.
+My recommendation for **reproducing the experiment** is to open up a blank notebook (jupyter, colab, etc.), and **copy and paste the code** from the "Data Preprocessing" notebook and the desired feature extraction method notebook. Each individual file includes the import statements necessary for that specific code at the top and is designed to be ready to use as is. The **only edit necessary** is the addition of your **unique file paths** to the image directory and the metadata csv. **Instructions for downloading the data** are included in the [Data Preprocessing markdown file](Data Preprocessing.md).
 
 Lastly, a **Reflection** file is included in the main branch to communicate my reflections about the experiemnt: what worked, what didn't, and why?
 
@@ -93,7 +92,7 @@ Kundu, R. (2022, May 22). The beginner’s guide to contrastive learning. V7 L
 
 In the case of the "Clustering BioTrove" dataset with ~50k images and **only** family labels provided (in addition to unique identifier hash ids), the contrastive learning approach was a way to leverage the taxonomic family labels that were provided in the metadata csv. Every other extraction method I used was simply a frozen ResNet50 model with pretrained ImageNet weights. No labels or supervised learning could be leveraged in those methods. With this approach however, I was able to create a supervised learning situation, where family-labels being the same or different impacted the weights of the base ResNet50 model. In this way, I was able to tune the weights of the model, starting from the pre-trained ImageNet weights, to some extent, to my specific data - the BioTrove subset.
 
-Finally, let's discuss the **visualization of image embeddings**. As stated before, image embeddings extracted through each of the four previously-mentioned approaches, were reduced to two dimensions so that they could be plotted and visualized. This dimensionality-reduction was done using the UMAP library in Python. These two-dimensional embeddings were then plotted using the seaborn library in Python. It is important to note that the UMAP parameters were kept **constant** for visualization.
+Finally, let's discuss the **visualization of image embeddings**. As stated before, image embeddings extracted through each of the four previously-mentioned approaches, were reduced to two dimensions so that they could be plotted and visualized. This dimensionality-reduction was done using the UMAP library in Python. These two-dimensional embeddings were then plotted using the seaborn library in Python. It is important to note that the UMAP parameters were kept **constant** across all feature extraction methods.
 
 ![UMAP parameters](umap_params.png)
 
