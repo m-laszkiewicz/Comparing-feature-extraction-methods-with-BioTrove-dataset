@@ -59,7 +59,9 @@ Each of these methods includes some variation of the ResNet model. ResNet stands
 Yang, C. (2018, March 11). *Vertical Edge Detection* [infographic]. In C. Yang,
 Deep Learning--CNN: Edge Detection, LinkedIn. https://www.linkedin.com/pulse/deep-learning-cnn-edge-detection-chen-yang/
 
+A **very informative, intuitive, and interactive explanation** of how CNN models work can be found [here](https://poloclub.github.io/cnn-explainer/).
 
+Basic CNN models, especially deep CNN models with many layers, suffer from something called **vanishing gradients** which hinders the models ability to backpropogate effectively through all of the layers and update the weights at each layer accordingly. Therefore, a more effective CNN architecture called the **"residual neural network"** (RNN) was introduced. ResNet models, compared to traditional CNNs, use residual blocks and skip connections to form identity shortcuts that shift learning from full transformations to residual increments. This allows very deep networks to learn meaningful representations efficiently by preserving useful information and easing optimization, rather than forcing each layer to relearn complete mappings. The following image shows a comparison of the 
 
 Now let's take a look at each method more closely. 
 
