@@ -19,7 +19,7 @@ Code is presented in the form of Jupyter notebooks.
   - Discussion of results 
 
 **CODE TO REPRODUCE RESULTS OF EXPERIMENT EXISTS IN THE FOLLOWING FILES**:
-  - The **Data Preprocessing** file contains code to load in the clustering biotrove image dataset and metadata (49,633 image subset of original BioTrove dataset with corresponding metadata csv file), perform transforms on images, create custom dataset subclass, and create a dataloader. Since all four feature extraction methods function using the same preprocessing strategy, a separate file has been used for this code. 
+  - The **Data Preprocessing** file contains code to load in the clustering biotrove image dataset and metadata (49,633 image subset of original BioTrove dataset with corresponding metadata csv file), perform transforms on images, create custom dataset subclass, and create a dataloader. Since all four feature extraction methods function using the same preprocessing strategy, a separate file has been used for this code. [Data preprocessing code here](Data_Preprocessing.ipynb)
   - Each of the four extraction methods has its own, uniquely named section. Each individual section includes an explanation of the particular extraction method used as well as code to perform that method. The four extraction method files include:
       - **Single-layer ResNet50 feature extraction**
       - **Double-layer ResNet50 feature extraction**
@@ -77,6 +77,7 @@ Now let's take a look at each of the four extraction methods used in my research
 
 ### Single-layer ResNet50 feature extraction
 This method involves extraction from a single layer, the final average global pooling layer, of the ResNet50 model, which is pretrained on ImageNet. The weights in the model are frozen, and each image does one pass through the model, until the final global average pooling layer, and then those embeddings are extracted and attached to a python object/variable. 
+[Single-layer ResNet50 feature extraction code here](single-layer_ResNet50_feature_extraction.ipynb)
 
 ### Double-layer ResNet50 feature extraction
 This method involves extraction from two layers in a pretrained (ImageNet) model: layer 3, with adaptive average pooling applied, and the final global average pooling layer. The double-layer extraction approach was taken to mimic the natural hierarchy of genus- and species-level features in living organisms which was important for the downstream task of clustering in the context of the "Clustering BioTrove" competition. The intuition was that earlier layers in the ResNet model would capture/highlight more general features that would lend themselves well to identifying genus distinctions while the later layers in the model would highlight more specific details that would lend themselves better to distinguishing between species. 
