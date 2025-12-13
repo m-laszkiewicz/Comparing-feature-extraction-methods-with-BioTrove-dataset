@@ -53,6 +53,10 @@ I compared the following four feature extraction methods in this project:
   3. Double-layer ResNet101 
   4. Double-layer ResNet50 + supervised contrastive
 
+Each of these methods includes some variation of the ResNet model. ResNet stands for "residual neural network" which is a type of convolutional neural network. Convolutional neural networks in general, are very powerful at extracting meaningful embeddings from input images, using matrices with specific values against the matrices of the original input image, to create transformations that highlight important features of the input image, namely edges. An example of this edge detection can be seen in the following image from a [LinkedIn article by **Chen Yang**](https://www.linkedin.com/pulse/deep-learning-cnn-edge-detection-chen-yang/).
+
+
+
 Now let's take a look at each method more closely. 
 
 ### Single-layer ResNet50 feature extraction
