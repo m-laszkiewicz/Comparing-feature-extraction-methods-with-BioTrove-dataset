@@ -98,17 +98,17 @@ Finally, let's discuss the **visualization of image embeddings**. As stated befo
 
 ### Single-layer ResNet50 feature extraction
 
-!(Single-layer ResNet50 feature extraction
+![Single-layer ResNet50 feature extraction](resnet50_single_embedding.png)
 
 ### Double-layer ResNet50 feature extraction
 
-!(Double-layer ResNet50 feature extraction
+![Double-layer ResNet50 feature extraction](resnet50_embeddings.png)
 
 ### Double-layer ResNet101 feature extraction
-!(Double-layer ResNet101 feature extraction
+![Double-layer ResNet101 feature extraction](resnet101_embeddings.png)
 
 ### Double-layer ResNet50 + supervised contrastive feature extraction
-!(Double-layer ResNet50 + supervised contrastive feature extraction
+![Double-layer ResNet50 + supervised contrastive feature extraction](supcon_embeddings.png)
 
 
 
