@@ -9,7 +9,7 @@ LLMs including ChatGPT, Gemini, and the Acanaconda Navigator, which uses several
 Code is in **Python** and the deep learning package used for analysis is **PyTorch**. 
 Code is presented in the form of Jupyter notebooks.
 
-## Repo Structure - How to use this repo
+## Repo structure - How to use this repo
 To keep things clear and organized, this repo is broken up into **different sections in the main branch**. 
 The README file includes the following:
   - Information on the original biotrove dataset
