@@ -30,12 +30,14 @@ My recommendation for **reproducing the experiment** is to open up a blank noteb
 
 Lastly, a [**Reflection**](Reflection.md) file is included in the main branch to communicate my reflections about the experiemnt: what worked, what didn't, and why?
 
+
 ## Background
 ### Original BioTrove Dataset
 The original BioTrove dataset is described as "the largest publicly accessible dataset designed to advance AI applications in biodiversity". It was curated from the iNaturalist platform as part of an effort spanning several different universities in the United States, and includes 161.9 million images of living organisms with taxonomic information provided in metadata. It was released in 2024. A plethora of information about the original BioTrove dataset, including but not limited to: link to original paper, github repository, and example images, can be found ["here"](https://baskargroup.github.io/BioTrove/).
 
 ![Top seven phyla represented in the original BioTrove dataset](top_seven_phyla_biotrove.png)
 Yang, C.-H., Feuer, B., Jubery, Z., Deng, Z. K., Nakkab, A., Hasan, M. Z., Chiranjeevi, S., Marshall, K., Baishnab, N., Singh, A. K., Singh, A., Sarkar, S., Merchant, N., Hegde, C., & Ganapathysubramanian, B. (2024). Figure 1: Top Seven Phyla in the BioTrove Dataset. In BioTrove: A large curated image dataset enabling AI for biodiversity (NeurIPS Datasets and Benchmarks Track). Advances in Neural Information Processing Systems 37. Neural Information Processing Systems Foundation, Inc. https://doi.org/10.52202/079017-3241
+
 
 ### Clustering BioTrove Challenge
 
@@ -44,6 +46,7 @@ Yang, C.-H., Feuer, B., Jubery, Z., Deng, Z. K., Nakkab, A., Hasan, M. Z., Chira
 The "Clustering BioTrove" challenge was created by the ML+X machine learning organization from the University of Wisconsin-Madison as part of the 2025 Machine Learning Marathon competition. The challenge included a 49,633 image subset of the original BioTrove dataset with a corresponding metadata csv file that **only included** the unique image identifiers (**hash_id**), and **taxonomic family** names for the images. **179 unique taxonomic families** were represented in the "Clustering Biotrove" dataset. The goal of the challenge was to cluster the ~50k image dataset into genus- and species-level groupings with only the "hash_id" and "family" label provided for each individual image using **unsupervised learning approaches**. As the challenge was unsupervised, there was no ground truth data provided and results were formatted according to the challenge instructions into a csv file and submitted on kaggle for evaluation using the Normalized Mutual Information (NMI) metric. I participated in this challenge in the Fall 2025 semester as part of the "BioTrove_1" team. This experiment occurs in the context of the "clustering-BioTrove" challenge because my team's general approach was to 1) extract image embeddings using a deep learning approach and then 2) cluster these embeddings into genus- and species-level groupings. As such, I spent a lot of time trying to find the best feature extraction method, visualizing embeddings to compare the results of different methods. This formed the basis for this research project which was used as my final project for the EnvirSt 900: AI for Earth Observation graduate-level course at the University of Wisconsin-Madison in the Fall 2025 semester. Although the competition was a team effort, the models used in this research project/experiment were created by me.
 
 ![clustering biotrove data sample](clustering_biotrove_data_sample.png)
+
 
 ## Research Question: Which feature extraction method performs the best (i.e. creates the most separability for embeddings in embedding space)?
 Feature extraction is a way to extract meaningful information from images in the form of image embeddings. In the world of deep learning, this is commonly done by way of convolutional neural networks (CNNs) but can also be done using other model architectures such as vision transformers (ViTs). For this research project, I compared the results (plots) of four feature extraction methods, all based on **CNN model architectures**, in the context of the "Clustering BioTrove" dataset. The following image shows an example of feature extraction performed in this experiment using a pretrained (on ImageNet) ResNet50 model to extract features at two different layers (layer 3 and layer 4 respectively to represent hierarchy of genus- and species-level features). This visualization was done using a density heatmap to show which parts of the input image were being "noticed" the most or "given the most importance" by the model at each extraction point.
@@ -62,6 +65,7 @@ I compared the following four feature extraction methods in this project:
   3. Double-layer ResNet101 
   4. Double-layer ResNet50 + supervised contrastive
 
+
 Each of these methods includes some variation of the ResNet model. ResNet stands for "residual neural network" which is a type of convolutional neural network. Convolutional neural networks in general, are very powerful at extracting meaningful embeddings from input images, using matrices with specific values against the matrices of the original input image, to create transformations that highlight important features of the input image, namely edges. An example of this edge detection through use of a convolution can be seen in the following image from a [LinkedIn article by **Chen Yang**](https://www.linkedin.com/pulse/deep-learning-cnn-edge-detection-chen-yang/).
 
 ![Chen Yang convolution edge detection](convolution_operation.jpg)
@@ -75,10 +79,12 @@ Basic CNN models, especially deep CNN models with many layers, suffer from somet
 ![VGC-19, plain CNN, and ResNet34 comparison](resnet_model_comparison.png)
 He, K., Zhang, X., Ren, S., & Sun, J. (2015). Figure 3 [Illustration of dimensionality change in residual blocks]. In Deep residual learning for image recognition (arXiv:1512.03385) arXiv. https://arxiv.org/pdf/1512.03385.pdf
 
-The ResNet50 follows this same architecture however it contains 50 convolutional layers instead of the 34 convolutional layers of ResNet34. A simplified diagram of the ResNet model architecture showing ResNet50, 101, and 152 model architectures can be seen below.
+The ResNet50 follows this same architecture however, it contains 50 convolutional layers instead of the 34 convolutional layers of ResNet34. A simplified diagram of the ResNet model architecture showing ResNet50, 101, and 152 model architectures can be seen below.
 
 ![ResNet 50,101,152 architecture](resnet_models_diagram.png)
 Rastogi, A. (2022, March 14). ResNet-50 architecture [Illustration]. In ResNet50. Dev Genius. https://blog.devgenius.io/resnet50-6b42934db431?gi=45d7a87dce82
+
+
 
 Now let's take a look at each of the four extraction methods used in my research project more closely. 
 
@@ -103,6 +109,8 @@ Kundu, R. (2022, May 22). The beginner’s guide to contrastive learning. V7 L
 In the case of the "Clustering BioTrove" dataset with ~50k images and **only** family labels provided (in addition to unique identifier hash ids), the contrastive learning approach was a way to leverage the taxonomic family labels that were provided in the metadata csv. Every other extraction method I used was simply a frozen ResNet50 model with pretrained ImageNet weights. No labels or supervised learning could be leveraged in those methods. With this approach however, I was able to create a supervised learning situation, where family-labels being the same or different impacted the weights of the base ResNet50 model. In this way, I was able to tune the weights of the model, starting from the pre-trained ImageNet weights, to some extent, to my specific data - the BioTrove subset.
 [Double-layer ResNet50 + **supervised contrastive feature extraction** code here](supervised_contrastive_feature_extraction.ipynb)
 
+
+
 Finally, let's discuss the **visualization of image embeddings**. As stated before, image embeddings extracted through each of the four previously-mentioned approaches, were reduced to two dimensions so that they could be plotted and visualized. This dimensionality-reduction was done using the UMAP library in Python. These two-dimensional embeddings were then plotted using the seaborn library in Python. It is important to note that the UMAP parameters were kept **constant** across all feature extraction methods.
 
 ![UMAP parameters](umap_params.png)
@@ -123,6 +131,7 @@ Finally, let's discuss the **visualization of image embeddings**. As stated befo
 
 ### Double-layer ResNet50 + supervised contrastive feature extraction
 ![Double-layer ResNet50 + supervised contrastive feature extraction](supcon_embeddings.png)
+
 
 ## Discussion
 
