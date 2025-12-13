@@ -18,7 +18,7 @@ Code is presented in the form of Jupyter notebooks.
       - Visualization of embedding(s) of each feature extraction method
   - Discussion of results 
 
-The **code to reproduce** the results of **each of the four feature extraction methods** is **separated into different files** in the main branch:
+**CODE TO REPRODUCE RESULTS OF EXPERIMENT EXISTS IN THE FOLLOWING FILES**:
   - The **Data Preprocessing** file contains code to load in the clustering biotrove image dataset and metadata (49,633 image subset of original BioTrove dataset with corresponding metadata csv file), perform transforms on images, create custom dataset subclass, and create a dataloader. Since all four feature extraction methods function using the same preprocessing strategy, a separate file has been used for this code. 
   - Each of the four extraction methods has its own, uniquely named section. Each individual section includes an explanation of the particular extraction method used as well as code to perform that method. The four extraction method files include:
       - **Single-layer ResNet50 feature extraction**
