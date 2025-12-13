@@ -10,7 +10,12 @@ Code is in **Python** and the deep learning package used for analysis is **PyTor
 Code is presented in the form of Jupyter notebooks.
 
 ## Repo Structure - How to use this repo
-To keep things clear and organized, this repo is broken up into **different sections in the main branch**. The background of the original biotrove dataset, the clustering biotrove challenge, and the subject matter of this research project: a comparison of four different feature extraction methods on images of living organisms, are all covered in the background subsection of this readme file. The **code to reproduce** the results of **each of the four feature extraction methods** is seperated amongst files in the main branch. 
+To keep things clear and organized, this repo is broken up into **different sections in the main branch**. 
+The README file includes the following:
+  - Information on the original biotrove dataset
+  - Information on the clustering biotrove challenge and the BioTrove data subset used for this challenge
+  - A description of the research proejct/experiment which is the subject matter of this repository with visualizations of embeddings
+The **code to reproduce** the results of **each of the four feature extraction methods** is seperated amongst files in the main branch. 
   - The **Data Preprocessing** file contains code to load in the clustering biotrove image dataset and metadata (49,633 image subset of original BioTrove dataset with corresponding metadata csv file), perform    transforms on images, custom dataset subclass, and dataloader. Since all four feature extraction methods function using the same preprocessing strategy, a seperate file has been used for this code. 
   - Each of the four extraction methods has its own, uniquely named section. Each individual section includes an explanation of the particular extraction method used as well as code to perform that method. The    four extraction method files include:
       - **Single-layer ResNet50 feature extraction**
