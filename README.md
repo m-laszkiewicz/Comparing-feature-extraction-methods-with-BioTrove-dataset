@@ -71,9 +71,20 @@ The ResNet50 follows this same architecture however it contains 50 convolutional
 ![ResNet 50,101,152 architecture](resnet_models_diagram.png)
 Rastogi, A. (2022, March 14). ResNet-50 architecture [Illustration]. In ResNet50. Dev Genius. https://blog.devgenius.io/resnet50-6b42934db431?gi=45d7a87dce82
 
-Now let's take a look at each method more closely. 
+Now let's take a look at each of the four extraction methods used in my research project more closely. 
 
 ### Single-layer ResNet50 feature extraction
-This method involves extraction from a single layer, the final average global pooling layer, of the ResNet50 model, which is pretrained on ImageNet.
+This method involves extraction from a single layer, the final average global pooling layer, of the ResNet50 model, which is pretrained on ImageNet. The weights in the model are frozen, and each image does one pass through the model, until the final global average pooling layer, and then those embeddings are extracted and attached to a python object/variable. 
+
+### Double-layer ResNet50 feature extraction
+This method involves extraction from two layers in a pretrained (ImageNet) model: layer 3, with adaptive average pooling applied, and the final global average pooling layer. The double-layer extraction approach was taken to mimic the natural hierarchy of genus- and species-level features in living organisms which was important for the downstream task of clustering in the context of the "Clustering BioTrove" competition. The intuition was that earlier layers in the ResNet model would capture/highlight more general features that would lend themselves well to indentifying genus distinctions while the later layers in the model would highlight more specific details that would lend themselves better to distinguishing between species. 
+
+## Double-layer ResNet101 feature extraction
+This method was the exact same as the "Double-layer ResNet50 feature extraction" method except instead of a pretrained ResNet50 model, a pretrained ResNet101 model was used. The idea behind this was to compare the performance of a ResNet50 model and a ResNet101 model. Generally, deeper ResNet models perform slightly better than less deep ResNet models. In the context of the "Clustering BioTrove" competition, this was the case. The ResNet101 extraction method led to a slightly higher score. 
+
+## Double-layer ResNet50 + supervised contrastive feature extraction
+This method made use of the second feature extraction method of extracting from two layers (3 and global avg. pool) of a ResNet50 model, but it added the concept of **supervised contrastive learning** onto the ResNet50 model via projection heads in order to make use of the provided **family label** for each input image to train the ResNet50 model in a way that would "keep" images from the same family "close together" and images from different families "farther apart". As the model trained, the weights of the ResNet50 model were updated to reflect this family label mapping structure and then the weights were frozen and each image was passed through the model as before, and embeddings were extracted at two layers as previously. The idea behind supervised contrastive learning can be seen in the image below.
+
+
 
 
