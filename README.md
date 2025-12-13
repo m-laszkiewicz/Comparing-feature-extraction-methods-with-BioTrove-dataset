@@ -92,6 +92,8 @@ In the case of the "Clustering BioTrove" dataset with ~50k images and **only** f
 
 Finally, let's discuss the visualization of image embeddings. As stated before, image embeddings extracted through each of the four previously-mentioned approaches, were reduced to two dimensions so that they could be ploted and visualized. This dimension-reductionality was done using the UMAP library in Python. These two-dimensional embeddings were then plotted using the seaborn library in Python. It is important to note that the UMAP parameters were kept **constant** for visualization.
 
+![UMAP parameters](umap_params.png)
+
 
 
 
