@@ -23,3 +23,6 @@ All you need to do is **add your unique image directory filepath AND metadata cs
 
 ### Data Preprocessing notebook preview:
 
+![Data Preprocessing 1](data_preprocessing1.png)
+![Data Preprocessing 2](data_preprocessing2.png)
+
