@@ -14,7 +14,10 @@ To keep things clear and organized, this repo is broken up into **different sect
 The README file includes the following:
   - Information on the original biotrove dataset
   - Information on the clustering biotrove challenge and the BioTrove data subset used for this challenge
-  - A description of the research proejct/experiment which is the subject matter of this repository with visualizations of embeddings
+  - An in-depth explanation of the research proejct/experiment which is the subject matter of this repository
+      - Explanation of each of the four feature extraction methods
+      - Visualization of embedding(s) of each feature extraction method
+  - Discussion of results 
 
 The **code to reproduce** the results of **each of the four feature extraction methods** is **seperated into different files** in the main branch:
   - The **Data Preprocessing** file contains code to load in the clustering biotrove image dataset and metadata (49,633 image subset of original BioTrove dataset with corresponding metadata csv file), perform    transforms on images, custom dataset subclass, and dataloader. Since all four feature extraction methods function using the same preprocessing strategy, a seperate file has been used for this code. 
@@ -109,6 +112,8 @@ Finally, let's discuss the **visualization of image embeddings**. As stated befo
 
 ### Double-layer ResNet50 + supervised contrastive feature extraction
 ![Double-layer ResNet50 + supervised contrastive feature extraction](supcon_embeddings.png)
+
+## Discussion
 
 
 
