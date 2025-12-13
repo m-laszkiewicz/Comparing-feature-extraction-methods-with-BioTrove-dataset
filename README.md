@@ -120,7 +120,7 @@ Finally, let's discuss the **visualization of image embeddings**. As stated befo
 
 ### Single-layer ResNet50 feature extraction
 
-![Single-layer ResNet50 feature extraction](resnet50_single_embedding.png)
+![Single-layer ResNet50 feature extraction](resnet50_singlelayer_extraction.png)
 
 ### Double-layer ResNet50 feature extraction
 
