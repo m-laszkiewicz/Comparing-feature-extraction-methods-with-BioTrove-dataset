@@ -97,7 +97,7 @@ Finally, let's discuss the **visualization of image embeddings**. As stated befo
 
 ![UMAP parameters](umap_params.png)
 
-# Visualizations of embeddings by extraction method:
+### **Visualizations of embeddings by extraction method:**
 
 ### Single-layer ResNet50 feature extraction
 
