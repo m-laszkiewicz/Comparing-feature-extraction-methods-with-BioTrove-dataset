@@ -27,6 +27,8 @@ The **code to reproduce** the results of **each of the four feature extraction m
 
 My recommendation for **reproducing the experiment** is to open up a blank notebook (jupyter, colab, etc.), and **copy and paste the code** from the "Data Preprocessing" file, the desired feature extraction method file, and "Embedding Visualization" file into the notebook. Each individual file includes the import statements necessary for that specific code at the top and is designed to be ready to use as is. The **only edit necessary** is the addition of your **unique file paths** to the image directory and the metadata csv. **Instructions for downloading the data** are included in the Data Preprocessing file.
 
+Lastly, a **Reflection** file is included in the main branch to communicate my reflections about the experiemnt: what worked, what didn't, and why?
+
 ## Background
 ### Original BioTrove Dataset
 The original BioTrove dataset is described as "the largest publicly accessible dataset designed to advance AI applications in biodiversity". It was curated from the iNaturalist platform as part of an effort spanning several different universities in the United States, and includes 161.9 million images of living organisms with taxonomic information provided in metadata. It was released in 2024. A plethora of information about the original BioTrove dataset, including but not limited to: link to original paper, github repository, and example images, can be found ["here"](https://baskargroup.github.io/BioTrove/).
