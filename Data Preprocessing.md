@@ -21,3 +21,5 @@ All you need to do is **add your unique image directory filepath AND metadata cs
 
 [Full Data_Preprocessing jupyter notebook here](Data_Preprocessing.ipynb)
 
+### Data Preprocessing notebook preview:
+
