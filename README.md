@@ -85,6 +85,8 @@ This method was the exact same as the "Double-layer ResNet50 feature extraction"
 ## Double-layer ResNet50 + supervised contrastive feature extraction
 This method made use of the second feature extraction method of extracting from two layers (3 and global avg. pool) of a ResNet50 model, but it added the concept of **supervised contrastive learning** onto the ResNet50 model via projection heads in order to make use of the provided **family label** for each input image to train the ResNet50 model in a way that would "keep" images from the same family "close together" and images from different families "farther apart". As the model trained, the weights of the ResNet50 model were updated to reflect this family label mapping structure and then the weights were frozen and each image was passed through the model as before, and embeddings were extracted at two layers as previously. The idea behind supervised contrastive learning can be seen in the image below.
 
+![Supervised Contrastive Learning Visual Example](supcon_example.avif)
+
 
 
 
