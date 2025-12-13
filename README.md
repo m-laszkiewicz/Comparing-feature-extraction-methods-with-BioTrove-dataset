@@ -66,6 +66,9 @@ Basic CNN models, especially deep CNN models with many layers, suffer from somet
 ![VGC-19, plain CNN, and ResNet34 comparison](resnet_model_comparison.png)
 He, K., Zhang, X., Ren, S., & Sun, J. (2015). Figure 3 [Illustration of dimensionality change in residual blocks]. In Deep residual learning for image recognition (arXiv:1512.03385) arXiv. https://arxiv.org/pdf/1512.03385.pdf
 
+The ResNet50 follows this same architecture however it contains 50 convolutional layers as pictured below. 
+
+
 Now let's take a look at each method more closely. 
 
 ### Single-layer ResNet50 feature extraction
