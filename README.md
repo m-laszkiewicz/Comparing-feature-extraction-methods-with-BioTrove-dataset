@@ -90,9 +90,25 @@ Kundu, R. (2022, May 22). The beginner’s guide to contrastive learning. V7 L
 
 In the case of the "Clustering BioTrove" dataset with ~50k images and **only** family labels provided (in addition to unique identifier hash ids), the contrastive learning approach was a way to leverage the taxonomic family labels that were provided. Every other extraction method I used was simply a frozen ResNet50 model with pretrained ImageNet weights. No labels or supervised learning could be leveraged in those methods. With this approach however, I was able to create a supervised learning context, where family-labels being the same or different impacted the weights of the base ResNet50 model. In this way, I was able to tune the weights of the model, starting from the pre-trained ImageNet weights, to some extent to my specific data - the BioTrove subset.
 
-Finally, let's discuss the visualization of image embeddings. As stated before, image embeddings extracted through each of the four previously-mentioned approaches, were reduced to two dimensions so that they could be ploted and visualized. This dimension-reductionality was done using the UMAP library in Python. These two-dimensional embeddings were then plotted using the seaborn library in Python. It is important to note that the UMAP parameters were kept **constant** for visualization.
+Finally, let's discuss the **visualization of image embeddings**. As stated before, image embeddings extracted through each of the four previously-mentioned approaches, were reduced to two dimensions so that they could be ploted and visualized. This dimension-reductionality was done using the UMAP library in Python. These two-dimensional embeddings were then plotted using the seaborn library in Python. It is important to note that the UMAP parameters were kept **constant** for visualization.
 
 ![UMAP parameters](umap_params.png)
+
+**Visualizations of embeddings by extraction method:**
+
+### Single-layer ResNet50 feature extraction
+
+!(Single-layer ResNet50 feature extraction
+
+### Double-layer ResNet50 feature extraction
+
+!(Double-layer ResNet50 feature extraction
+
+### Double-layer ResNet101 feature extraction
+!(Double-layer ResNet101 feature extraction
+
+### Double-layer ResNet50 + supervised contrastive feature extraction
+!(Double-layer ResNet50 + supervised contrastive feature extraction
 
 
 
