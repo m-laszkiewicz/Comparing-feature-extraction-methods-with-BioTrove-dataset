@@ -14,7 +14,7 @@ To keep things clear and organized, this repo is broken up into **different sect
 The README file includes the following:
   - Information on the original biotrove dataset
   - Information on the clustering biotrove challenge and the BioTrove data subset used for this challenge
-  - An in-depth explanation of the research proejct/experiment which is the subject matter of this repository
+  - An in-depth explanation of the research project/experiment which is the subject matter of this repository
       - Explanation of each of the four feature extraction methods
       - Visualization of embedding(s) of each feature extraction method
   - Discussion of results 
