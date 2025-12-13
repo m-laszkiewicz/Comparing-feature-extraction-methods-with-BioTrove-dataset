@@ -29,7 +29,7 @@ My recommendation for **reproducing the experiment** is to open up a blank noteb
 
 ## Background
 ### Original BioTrove Dataset
-The original BioTrove dataset...
+The original BioTrove dataset is described as "the largest publicly accessible dataset designed to advance AI applications in biodiversity". It was curated from the iNaturalist platform as part of an effort spanning several different universities in the United States, and includes 161.9 million images of living organisms with taxonomic information provided in metadata. It was released in 2024. A plethora of information about the original BioTrove dataset, including but not limited to: link to original paper, github repository, and example images, can be found ["here"](https://baskargroup.github.io/BioTrove/).
 
 ### Clustering BioTrove Challenge
 The "Clustering BioTrove Challenge" was...
