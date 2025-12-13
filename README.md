@@ -55,7 +55,7 @@ I compared the following four feature extraction methods in this project:
 
 Now let's take a look at each method more closely. 
 
-# Single-layer ResNet50 feature extraction
+### Single-layer ResNet50 feature extraction
 This method involves 
 
 
