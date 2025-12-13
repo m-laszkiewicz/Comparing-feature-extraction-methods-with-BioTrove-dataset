@@ -10,8 +10,7 @@ Code is in **Python** and the deep learning package used for analysis is **PyTor
 Code is presented in the form of Jupyter notebooks.
 
 ## Repo structure - How to use this repo
-To keep things clear and organized, this repo is broken up into **different sections in the main branch**. 
-The README file includes the following:
+**README** file includes the following:
   - Information on the original biotrove dataset
   - Information on the clustering biotrove challenge and the BioTrove data subset used for this challenge
   - An in-depth explanation of the research project/experiment which is the subject matter of this repository
