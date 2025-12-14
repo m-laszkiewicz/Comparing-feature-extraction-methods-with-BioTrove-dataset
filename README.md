@@ -124,7 +124,7 @@ Finally, let's discuss the **visualization of image embeddings**. As stated befo
 
 ### Double-layer ResNet50 feature extraction
 
-![Double-layer ResNet50 feature extraction](resnet50_embeddings.png)
+![Double-layer ResNet50 feature extraction](resnet50_double_layer_embedding_plots.png)
 
 ### Double-layer ResNet101 feature extraction
 ![Double-layer ResNet101 feature extraction](resnet101_embeddings.png)
